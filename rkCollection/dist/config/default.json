@@ -1,0 +1,22 @@
+{
+    "port": 8000,
+    "dbConfig": {
+        "db": "mongodb://localhost:27017/rkCollection"
+    },
+    "file": {
+        "path": "./files/"
+    },
+    "firebase": {
+        "type": "service_account",
+        "project_id": "rk-collection-bf221",
+        "private_key_id": "2fbfc8cd5bde6c7b7e1761a1ee40739e177e40ed",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDw7EuQRtmldI4j\n8yJVFmn0Sua9WSZFIth6CEdAg0I4JcN8UCmdw1H/pm4nEOc01Yh78qzE+Jm3DpU+\nUoIWML9XDyKchjEqfFFislZY1uLfDIQSGTdIQ1XSCmSJMprKXQtKJsvl6TxXll5a\ntvJxLSdmW+WJY31eUyCRgyX5o0OhRfMMHRZmKSVU1HdoCi/o0mUVJSrYXuHRtCcc\n3NKriSJ5DD4PAs9zmbJahZEdze1WgBgQGgvHJFYo6hCw+wESJeArexAU1qmQNf/h\nu5OPKSjqpE0FcE+1sL7/pLZD3uPTxb6NQUqnBdQHSAjpVh1aQHJqwmUUp253Csp5\nMhqHl6hhAgMBAAECggEATviFhFNVAEEGXo5R0KY6MNNkcuiH/N2BK+8Ou/zKdfEa\n9OKp4YammDALp06JGu5rgIV5UE9Uw4ZKMVWGQpPUBEt3wurRruV1H+7pEtHNJ+PI\nXs5ZKpy3wtOZRMeLqY16J+Izr7cWCnfFkeKp8aMlaQ3yXWh5LbP91vSwO/XiMzhB\nrGUcbZ6lkq/NAD42dZcTviTGqjVCLxUa3tUTdAb+FzzwCPbCxH4IUQFf+5+U3Aoo\niupiCFd6CfrYajwJ3g5ZghvJjYfuGC46jVNSZkZqxS/fPWFCNZ9BeubJLiiMfK/o\n8BlQ+VN8jISZSfl0d8QLFkuu2crEmmnkBfDukgVDqQKBgQD9gRlrMfnT0zYAv+wP\nVwWa5eaaZoCdfzwdVOeZlIfhVxg9J1QHTiAhwJr8Dgxz6GM7mJHbifhnkEAV1l+H\n9HBOdX44WiFjDlCguFU72CbDgN4M1tCScIK+eGiYJtSeiDEhiaO3M8NHMXI6v5b3\n1BnGap4goPcbr8grqVVvuogrlwKBgQDzS3zUnlQIP7Ot7VEfmD2ahqk2GkF1fMhV\nz98T8YheEHJhK9ywaq3SrieuPfmS13JMf1CMfcqKyVKBN3V08alfFQux/AsCrL7Y\n7zkDic9/kE5iiSOkHW5dQ51oG0F8dLyopRxuW2WQSolAzB5DLsUV8DAHFfp3Rx+O\nM6SmwwEqxwKBgQCk3NmoEhdUQA7ly+r8Su7VPuCK11CbnMx+kuIPyj3YOakE1Ffc\nbF2PNdBVTdmhY6dtcZqh+Qd4aqKS0RjNtRV4oQaWJV+DKSMccuTTh44mJN/D38xD\nADK3Jl13XgF2nEG/euDi2yILYcfVFxZaVDDzDhGKTMSH1/jJFFYA1IGMPwKBgQCj\nvGf0h+Gx830vTonMI59CAeKbYKwxL5t79PwC5giKlbMEpopNyF3XbhGSeG8gXhK0\nXPKOupG3OapnADXyUDlWnklSrXeTg0KlqMnMEdEt3qaCNh1gc9Y0ui6TQ9Sct8vI\nC+bIdoYxx5f7neO3/x/wlccc3bPE1n7sKuFiwdZlPQKBgH8Yhz4CS8OKu9+bp21v\nD4Pkc21qARcxCo92RHkKod2tAIh1taBCdj8BZnUb/9r3rpza0h2QLWIeC8kPhzYd\nnBz1en97fB+/+IPPEPzswipcEgyEGRlk2DOQd1IRVHs5qwj4mCPCzl2dXWdBH/7u\nRHbqB3RKYgpDPbG1mK74e324\n-----END PRIVATE KEY-----\n",
+        "client_email": "firebase-adminsdk-5pftn@rk-collection-bf221.iam.gserviceaccount.com",
+        "client_id": "111048499870472201473",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-5pftn%40rk-collection-bf221.iam.gserviceaccount.com"
+    },
+    "storageBucketUrl": "gs://rk-collection-bf221.appspot.com"
+}

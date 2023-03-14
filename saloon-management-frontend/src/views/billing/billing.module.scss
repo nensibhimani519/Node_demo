@@ -1,0 +1,19 @@
+.overflow {
+  max-height: 76vh;
+  overflow-y: auto;
+  margin-right: 5px;
+}
+.transaction{
+  color: #2962ff;
+  cursor: pointer;
+}
+.billMain{
+  margin-bottom: 20px;
+}
+.billDiv{
+  display: flex;
+}
+.billTitle{
+  font-weight: bold;
+  margin-right: 10px;
+}

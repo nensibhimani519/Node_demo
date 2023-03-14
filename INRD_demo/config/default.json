@@ -1,0 +1,24 @@
+{
+  "port": 8000,
+  "jwtPrivateKey": "inrd-jwt-private-key",
+  "encryptionKey": "inrd-encryption-key",
+  "dbConfig": {
+    "db": "mongodb://localhost:27017/inrd"
+  },
+  "file": {
+    "path": "./files/"
+  },
+  "firebase": {
+    "type": "service_account",
+    "project_id": "inrd-f3749",
+    "private_key_id": "cc6382e10a9c0bc8b763e7fab326efa14fca515c",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDBTVedlGImOcit\nXpib3hQEGAi/JtWKJQDEQs2/0yqy6mXXamOqj3dKg0/ZjqlQXhzFqI2L8yn1uIhy\neCg/GWr7aG23+hYMXYW8DUxIXddX+tAcutaPtp31sDe0Qu+cd9OjdUy4cAXNGMio\nLpsciOz4rqi9II00fOMOXAD49CfSfkheQDsc7R6f78FDQXoWOxp42J9VXx189OHd\n0ZMI+vEnKIE5rv63hhBcD1UjlcKaC/62lbgTyxHAIL3ejIJ/i+i+RPQD4MqQM24X\n+1jXBoURCaIJQTGMS37fXb2qEQ5nhZhO6llPAQeYd0pZKTOahS4lk8Bh3CKw7Jp2\nETcKXVQDAgMBAAECggEAGi5sEgtReeT0scqwt9fN9Tn+IUnUvWfCoVJ9BKDI1T/b\nOGCQDD9vRFfhvlFMzHZaxkjMlyqBwebTEFIG/XjnXRLpXXRRfS5DmVNhxCF1s9Rk\nUKfbvM5auba67L7uLk6qiyatlAOUPZHAR8s8NhKzqgEaGLeqeHP72uuKNC35oNA+\nMJT1AivowZkamfjbJeL9yHkvXfhbeOcYFeksEoixoZAV72yU/xFAcJRQX7XTmLX9\n6Xc1zV88cDHzF8PZWoDJNmDcWRHw5U/oVmCBNqom6bX0C7JLB9LYEhWxKxw4lvaM\nkQaW3c0k+6ylBlUQnZNMJH5RGkuNvD6Uzcn/h/RFhQKBgQD7Ccy4OLyxPRFZOuNf\n2a0xVmDN/SuWvA0KmJ38pEPSd0d2RnK+hyXeV0+e5q8/B5VXbn3V/9fqn1+BX2vr\nXEjgvin4/xJG4oYX2acdiCNWfsuR5mKE4Xn8YMba+g+TKDRxb4hjilZOVdqotTnU\noUELrRKqidgn2SzWpJrFgZ4THwKBgQDFH2jsoVcIL4062jIWwRmQfs0EK8CHG0ZD\nmA1NdwzMoRebxVmgdAcX6JuiVmOvnCppLOwcQro+AA2j3jrCaq45Ww0D7rE+GBpk\nS3wWEhE8yx6BJGcrKDC6jCawmQmqkZvGZmS/CF5yk/7E03m7u/Ci0My3SbpZlrDe\nGGpOlMsmnQKBgQCnEAh7eNaqJPfMqBH1EcnekZtuulMtxwvux04seazg/ZxDK/Lk\ntNAQvY4xM1fg3E0YmGGJ7u9kJpfKYxRQ12NwnV0VZbpmDg4rBR/f2V+bClqzR9y8\njck+mbD8vXlr90+fRhhAFioFi8EukRxhUscU3CMV9xIwwqjCV1zgn7fxBQKBgAJ4\nK0NTnhh/KADFvPzl/GEABad4uNe4cr/kBr6isClcF0SfS0kkSvZ0toZpGKSZizp4\nEpkkCNs/+uvDm+7VkUsspdQXyGajvKjm/S31mfut+7rYbuZugXXEzbNGp4VYf6AT\npk1yWGSNEBL9Jzg/2XrgrL/bD5eRuLN/kM1dNdJNAoGBAJwGg28vZo2U2hcg8X3Q\n1aJxu7CPdMSbYpyyJbYh7byHxgUJ81vSnV88NZdnRTyuML+Q+zwQLPxCiNJEK5H2\nK3y/5VEMRtJDMkBfbIA4I5OgkszSkUaLl7sBOvRdyv4X3n5BCiA0Hm596PN36cP3\n2sPihFoT4LnFbh57yOZUwOMP\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-dsb20@inrd-f3749.iam.gserviceaccount.com",
+    "client_id": "101046944455388576685",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dsb20%40inrd-f3749.iam.gserviceaccount.com"
+  },
+  "storageBucketUrl": "gs://inrd-f3749.appspot.com"
+}

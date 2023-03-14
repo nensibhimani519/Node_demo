@@ -1,0 +1,74 @@
+.pageWrapper {
+  min-height: calc(100vh - 70px);
+}
+
+.contentArea {
+  flex-grow: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.card {
+  box-shadow: $card-box-shadow;
+  margin-bottom: 30px;
+}
+
+.circle-box {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 100%;
+  &.lg-box {
+    width: 60px;
+    height: 60px;
+    font-size: 21px;
+    line-height: 60px;
+  }
+}
+.button-group .btn {
+  margin: 3px;
+}
+table th {
+  font-weight: 500;
+}
+
+.status_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-right: 1em;
+  flex-wrap: wrap;
+}
+
+.customer_status_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3em;
+  padding: .4em;
+  // position: fixed;
+  // top: 12%;
+  // right: 0%;
+  flex-direction: row;
+  z-index: 10;
+  font-size: .9rem !important;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+@media (max-width:767px) {
+  .status_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    margin-right: 0em;
+    flex-wrap: wrap;
+    margin-top: 1em;
+  }
+}

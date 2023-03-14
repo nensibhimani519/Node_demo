@@ -1,0 +1,9 @@
+{
+  "port": 4000,
+  "dbUrl": "mongodb://localhost:27017/ecommerceShoping",
+  "encryptionKey": "user-encryption-key",
+  "jwtPrivateKey": "user-jwt-private-key",
+  "file": {
+    "path": "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13137110/2021/7/27/"
+  }
+}

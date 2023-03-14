@@ -1,0 +1,16 @@
+.corousel_item {
+  height: 40vh;
+}
+
+.payment_options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0em 3em;
+  gap: 3em;
+}
+.payment_option {
+  height: 25vh;
+}

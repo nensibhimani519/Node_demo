@@ -1,0 +1,133 @@
+1. db.wishlist.aggregate([
+    {$unwind: "$products"}
+    {$match : {_id : ObjectId("63d7ad02e3e7bbe82bc247fe")}
+    {$lookup: {
+          from: "product",
+          localField: "products",
+          foreignField: "_id",
+          as: "output"
+    }}
+    {$project: { output : 1, _id: 0}}
+    {$unwind: "$output" }
+    // {$sort: {"output.name" : 1}
+    {$skip: 0}
+    {$limit: 5}
+    ])
+
+// or
+=> let res = db.getCollection("wishlist").findOne({})
+db.getCollection("product").aggregate([
+     { $match: { _id : { '$in': res.products }} },
+     { $project: { name: 1, index: { '$indexOfArray': [res.products, '$_id'] } } },
+     { '$sort': { index: -1 } }
+])
+
+2. Create script for city wise total sales in below table
+=> db.order.aggregate([
+    {$group: { _id: "$city_id",total: {$sum: "$amount" }}},
+    {$lookup: {
+          from: "city",
+          localField: "_id",
+          foreignField: "_id",
+          as: "output"
+         } },
+    ])
+
+3.ABC company wants an order processing system for their order and inventory management.According to product inventory display the order no. that cannot be processed further. 
+Also,Update the status of order completed if stock is available, otherwise set cancel.
+=> const orderInventory = async (req: Request, res: Response) => {
+  let order: any = await Order.find({});
+  let prod: any = await Prod.find({});
+
+  let completedArr: any = [];
+  let cancelArr: any = [];
+
+  for (let i = 0; i < prod.length; i++) {
+    let pCode = await Order.find({ p_code: prod[i].p_code }).lean();
+    for (let j = 0; j < pCode.length; j++) {
+      if (prod[i].stock >= pCode[j].qty) {
+        prod[i].stock -= pCode[j].qty;
+        completedArr.push(pCode[j]._id);
+      } else {
+        cancelArr.push(pCode[j]._id);
+      } }
+    await Order.updateMany(
+      {
+        p_code: prod[i].p_code,
+      },
+      [
+        {
+          $set: {
+            status: {
+              $cond: {
+                if: { $in: ["$_id", completedArr] },
+                then: "Completed",
+                else: "Cancel",
+              },
+            },
+          },
+        },
+      ]
+    );
+
+    await Prod.updateOne(
+      { _id: prod[i]._id },
+      {
+        $set: {
+          stock: prod[i].stock,
+        },
+      }
+    );
+  }
+
+  res.status(200).json({
+    message: "order get Sucessfully!",
+    // totalRecords: totalItems,
+    order_data: order,
+    prod_data: prod,
+  });
+};
+
+4. Display the order details of the below product code.Product Codes = P001, P005, P003, P006
+=> db.orders.aggregate([
+    {$match: {p_code :{ $in: ["P001","P005", "P003","P006"]}} }
+  ])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

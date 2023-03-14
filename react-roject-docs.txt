@@ -1,0 +1,258 @@
+import { baseUrl, getProfile } from "../services/services.profile";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import CloseCircleOutlined from "@ant-design/icons/CloseCircleOutlined";
+import CheckCircleOutlined from "@ant-design/icons/CheckCircleOutlined";
+import InfoCircleOutlined from "@ant-design/icons/InfoCircleOutlined";
+import ConnectionsRequest from "./ConnectionsRequest";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { FilePdfOutlined } from "@ant-design/icons";
+function ConnectionsRequests() {
+  const {
+    Row,
+    Button,
+    Col,
+    Card,
+    Empty,
+    Image,
+    Typography,
+    message,
+  } = require("antd");
+  const { Text, Link } = Typography;
+  const [profile, setProfile] = useState({});
+  const [requests, setRequests] = useState([]);
+  const [networks, setNetworks] = useState([]);
+  const [connections, setConnections] = useState([]);
+
+  const getConnections = () => {
+    axios.get(baseUrl + "/api/connections").then((res) => {
+      setConnections(res.data.data);
+    })
+  };
+
+  const getNetworks = () => {
+    axios.get(baseUrl + "/api/user/networks").then((res) => {
+      setNetworks(res.data.data);
+    })
+  };
+
+  const removeConnection = (connection) => {
+    axios.delete(baseUrl + "/api/connect/" + connection.req_id).then((res) => {
+      message.info("Connection Removed Successfully");
+      getConnections();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  const viewArtpassID = (user) => {
+    window.open(baseUrl + "/connectreport/" + user._id, "_blank")
+  }
+
+  const viewCDDReport = (user) => {
+    window.open(baseUrl + "/" + user.cdd.fileP, "_blank")
+  }
+
+  const viewInspectionReport = (user) => {
+    window.open(baseUrl + "/" + user.InspectRp.fileUrl, "_blank")
+  }
+
+  const viewRequestedCDDReport = (connection, token) => {
+    window.open(baseUrl + "/api/connect/" + connection.req_id + "/view/" + token, "_blank")
+  }
+
+  const viewRequestedInspectionReport = (user) => {
+    window.open(baseUrl + "/" + user.InspectRp.fileUrl, "_blank")
+  }
+
+  const requestCDDReport = (connection) => {
+    axios.post(baseUrl + "/api/connect/" + connection.req_id + "/request-access-cdd").then((res) => {
+      message.info("CDD Requested Successfully");
+      getConnections();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  const acceptCDDRequest = (connection) => {
+    axios.post(baseUrl + "/api/connect/" + connection.req_id + "/accept-access-cdd").then((res) => {
+      message.info("CDD Request Accepted Successfully");
+      getConnections();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  const declineCDDRequest = (connection) => {
+    axios.post(baseUrl + "/api/connect/" + connection.req_id + "/decline-access-cdd").then((res) => {
+      message.info("CDD Request Declined");
+      getConnections();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  const revokeCDDRequest = (connection) => {
+    axios.post(baseUrl + "/api/connect/" + connection.req_id + "/revoke-access-cdd").then((res) => {
+      message.info("CDD Request Accepted Successfully");
+      getConnections();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  useEffect(() => {
+    getProfile().then((res) => {
+      setProfile(res);
+      getConnections();
+      getNetworks();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }, []);
+
+  if (connections.length || networks.length) {
+    return <>
+      <Row>
+        <Col flex={1}>
+          {connections.map((connection, i) => {
+            const connector = profile._id == connection.sender._id ? connection.receiver : connection.sender;
+            return <Row gutter={[16, 16]} align="middle" justify="center" key={i}>
+              <Col xs={24} md={4} flex="150px">
+                <Image
+                  src={ baseUrl + "/" + connector.avatar}
+                  preview={false}
+                />
+              </Col>
+              <Col flex="1">
+                <Card bordered={false} className="bg-light">
+                  <Row align="middle" gutter={[16, 8]}>
+                    <Col xs={24} lg={14}>
+                      {connector.company &&
+                       <><Typography.Text strong>{connector.company.name}</Typography.Text>&nbsp;&nbsp;</>
+                      } 
+                      <br/>
+                      <Typography.Text>{connector.fname + ' ' + connector.lname}</Typography.Text><br />
+                      <Typography.Text>@{connector.username}</Typography.Text><br />
+                      <Button className="m-2" size="small" shape="round" danger onClick={() => { removeConnection(connection); }}>Remove Connection</Button>
+                      
+                      {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'accepted' && 
+                      <>
+                        <Button className="m-2" size="small" shape="round" danger onClick={() => { revokeCDDRequest(connection); }}>Revoke CDD Access</Button>
+                      </>
+                       } 
+                      {profile._id == connection.receiver._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'accepted' && <>
+                        <Button className="m-2" size="small" shape="round" danger onClick={() => { revokeCDDRequest(connection); }}>Revoke CDD Access</Button>
+                      </>
+                      } 
+                    </Col>
+                    <Col xs={24} lg={10} style={{ textAlign: "right" }}>
+                      <Button className="m-2" type="" onClick={() => { viewArtpassID(connector); }}>artpass ID</Button>
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="" onClick={() => { viewArtpassID(connector); }}>artpass ID</button>
+
+                      {connector.is_sharing_cdd && <><br/>
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" onClick={() => { viewCDDReport(connector); }}>CDD Report</button>
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" onClick={() => { viewInspectionReport(connector); }}>Inspection Report</button>
+                      </>}
+
+                      {profile._id == connection.sender._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'accepted' && <>
+                        <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="" onClick={() => { viewRequestedCDDReport(connection, connection.sender_req_cdd.access_token); }}>CDD Report</button>
+                        <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="primary" onClick={() => { viewRequestedInspectionReport(connector); }}>Inspection Report</button>
+                      </>}
+
+                      {profile._id == connection.receiver._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'accepted' && <>
+                        <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="" onClick={() => { viewRequestedCDDReport(connection, connection.receiver_req_cdd.access_token); }}>CDD Report</button>
+                        <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="primary" onClick={() => { viewRequestedInspectionReport(connector); }}>Inspection Report</button>
+                      </>}
+
+                      {!connector.is_sharing_cdd && !(profile._id == connection.receiver._id && connection.receiver_req_cdd) && 
+                       <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="primary" onClick={() => { requestCDDReport(connection); }}>Request CDD Report</button>
+                       }
+
+                      {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' &&   
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="primary" onClick={() => { acceptCDDRequest(connection); }}>Share your CDD Report</button> 
+                      }
+
+                      {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' && 
+                      
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg" type="" onClick={() => { declineCDDRequest(connection); }}>Decline to share your CDD</button>
+                       }
+
+                      {profile._id == connection.receiver._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' && 
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg">CDD Request Pending
+                      </button>
+                      }
+                      {profile._id == connection.sender._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'pending' && 
+                      
+                      <button className="bg-primary m-2 text-white px-4 py-[5px] tracking-wide rounded-lg">CDD Request Pending</button>
+                      }
+
+                      {/* <Row align="middle">
+                        <AiOutlineClockCircle size={16} />
+                        &nbsp;<Typography.Text><small>Access Expires : { connector.InspectRp.validTill }</small></Typography.Text>
+                      </Row> */}
+                    </Col>
+                  </Row>
+                </Card>
+              </Col>
+            </Row>
+          })}
+        </Col>
+      </Row>
+    </>
+  } else {
+    return <Card>
+      <Empty description={<>Your connections will appear here <br /> with access to their artpass ID and CDD Report</>} />
+    </Card>
+  }
+}
+
+export default ConnectionsRequests;
+
+
+// <Col xs={24} lg={14}>
+// {connector.company && <><Typography.Text strong>{connector.company.name}</Typography.Text>&nbsp;&nbsp;</>} <br/>
+// <Typography.Text>{connector.fname + ' ' + connector.lname}</Typography.Text><br />
+// <Typography.Text>@{connector.username}</Typography.Text><br />
+// <Button className="m-2" size="small" shape="round" danger onClick={() => { removeConnection(connection); }}>Remove Connection</Button>
+
+// {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'accepted' && <>
+//   <Button className="m-2" size="small" shape="round" danger onClick={() => { revokeCDDRequest(connection); }}>Revoke CDD Access</Button>
+// </>}
+// {profile._id == connection.receiver._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'accepted' && <>
+//   <Button className="m-2" size="small" shape="round" danger onClick={() => { revokeCDDRequest(connection); }}>Revoke CDD Access</Button>
+// </>}
+// </Col>
+// <Col xs={24} lg={10} style={{ textAlign: "right" }}>
+// {/* <Button className="m-2" type="" onClick={() => { viewArtpassID(connector); }}>artpass ID</Button> */}
+// <button className="bg-primary text-white px-4 py-[5px] tracking-wide rounded-lg">artpass ID</button>
+
+// {connector.is_sharing_cdd && <><br/>
+//   <Button className="m-2" type="" onClick={() => { viewCDDReport(connector); }}>CDD Report</Button>
+//   <Button className="m-2" type="primary" onClick={() => { viewInspectionReport(connector); }}>Inspection Report</Button>
+// </>}
+
+// {profile._id == connection.sender._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'accepted' && <>
+//   <Button className="m-2" type="" onClick={() => { viewRequestedCDDReport(connection, connection.sender_req_cdd.access_token); }}>CDD Report</Button>
+//   <Button className="m-2" type="primary" onClick={() => { viewRequestedInspectionReport(connector); }}>Inspection Report</Button>
+// </>}
+
+// {profile._id == connection.receiver._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'accepted' && <>
+//   <Button className="m-2" type="" onClick={() => { viewRequestedCDDReport(connection, connection.receiver_req_cdd.access_token); }}>CDD Report</Button>
+//   <Button className="m-2" type="primary" onClick={() => { viewRequestedInspectionReport(connector); }}>Inspection Report</Button>
+// </>}
+
+// {!connector.is_sharing_cdd && !(profile._id == connection.receiver._id && connection.receiver_req_cdd) && <Button className="m-2" type="primary" onClick={() => { requestCDDReport(connection); }}>Request CDD Report</Button>}
+
+// {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' && <Button className="m-2" type="primary" onClick={() => { acceptCDDRequest(connection); }}>Share your CDD Report</Button>}
+
+// {profile._id == connection.sender._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' && <Button className="m-2" type="" onClick={() => { declineCDDRequest(connection); }}>Decline to share your CDD</Button>}
+
+// {profile._id == connection.receiver._id && connection.receiver_req_cdd && connection.receiver_req_cdd.status == 'pending' && <Button className="m-2">CDD Request Pending</Button>}
+// {profile._id == connection.sender._id && connection.sender_req_cdd && connection.sender_req_cdd.status == 'pending' && <Button className="m-2">CDD Request Pending</Button>}
+
+// {/* <Row align="middle">
+//   <AiOutlineClockCircle size={16} />
+//   &nbsp;<Typography.Text><small>Access Expires : { connector.InspectRp.validTill }</small></Typography.Text>
+// </Row> */}
+// </Col>
