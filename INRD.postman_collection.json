@@ -1,0 +1,1721 @@
+{
+	"info": {
+		"_postman_id": "7cc9fec6-b76a-41c6-bc79-ab5f20516cb8",
+		"name": "INRD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25191076"
+	},
+	"item": [
+		{
+			"name": "INRD Admin Api",
+			"item": [
+				{
+					"name": "announcement",
+					"item": [
+						{
+							"name": "get announcement list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page_no\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/get_announcement_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"get_announcement_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get announcement info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e1f934c93d917fbdeeee97\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/get_announcement_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"get_announcement_info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update announcement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"withdrw request pending1234\",\r\n    \"currency_code\" : \"INR\",\r\n    \"_id\" : \"63e33914e1e6099500d30f7a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/update_announcement",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"update_announcement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add announcement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"add announcement is done\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/add_announcement",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"add_announcement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\" : \"1\", \r\n    \"_id\" : \"63e338cfebee4f1c96b4c74f\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/change_status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"change_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete announcement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\" : \"1\", \r\n    \"_id\" : \"63e338cfebee4f1c96b4c74f\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/announcement/delete_announcement",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"announcement",
+										"delete_announcement"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "withdraw",
+					"item": [
+						{
+							"name": "get withdraw list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page_no\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/withdraw/get_withdraw_request_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"withdraw",
+										"get_withdraw_request_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get withdraw info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e1f3cfc62c2cbd4c90e884\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/withdraw/get_withdraw_request_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"withdraw",
+										"get_withdraw_request_info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e1f1848de561780dbd45cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/withdraw/approve",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"withdraw",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reject",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e1f301f2090cc6482d9b2a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/withdraw/reject",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"withdraw",
+										"reject"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "company",
+					"item": [
+						{
+							"name": "get social links",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/company/get_social_media_links",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"company",
+										"get_social_media_links"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update social link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"_id\" : \"63e3649147eb350c58983e32\",\r\n    \"help\" : {\r\n         \"telegram_link\" : \"telegram\",\r\n    \"email_id\": \"fsi.nensi@gmail.com\",\r\n    \"call\" : \"9856321470\",\r\n    \"discord_link\":\"discord1\",\r\n    \"whatsapp_link\" : \"whatsapp1\",\r\n    \"twitter_link\" : \"twitter1\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/company/update_social_media_links",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"company",
+										"update_social_media_links"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add social link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n\"help\" : {\r\n    \"telegram_link\" : \"telegram/1\",\r\n    \"email_id\": \"fsi.nensi@gmail.com\",\r\n    \"call\" : \"9856321470\",\r\n    \"discord_link\":\"discord/12\",\r\n    \"whatsapp_link\" : \"whatsapp/123\",\r\n    \"twitter_link\" : \"twitter/1234\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/company/add_social_links",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"company",
+										"add_social_links"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer bank",
+					"item": [
+						{
+							"name": "customer bank list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/customer_bank/get_bank_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_bank",
+										"get_bank_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer bank info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e0f499aca789de05ce2d0b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_bank/get_bank_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_bank",
+										"get_bank_info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer upi",
+					"item": [
+						{
+							"name": "customer upi list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/customer_upi/get_upi_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_upi",
+										"get_upi_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer upi info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e3745adf5b80c2d3a15da4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_upi/get_upi_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_upi",
+										"get_upi_info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer pay id",
+					"item": [
+						{
+							"name": "customer pay id list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page_no\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_pay_id/get_pay_id_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_pay_id",
+										"get_pay_id_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer pay id info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e0e235920ec59c29e9e6fd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_pay_id/get_pay_id_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_pay_id",
+										"get_pay_id_info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer interac",
+					"item": [
+						{
+							"name": "customer interac id list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"page_no\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_interac_id/get_interac_id_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_interac_id",
+										"get_interac_id_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer interac id info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e377fc6c4cced9365de7b8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/customer_interac_id/get_interac_id_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"customer_interac_id",
+										"get_interac_id_info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "promotion",
+					"item": [
+						{
+							"name": "promotion list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sort_type\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/get_promotion_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"get_promotion_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add promotion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"img\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.lovepik.com%2Fphoto%2F40009%2F8263.jpg_wh300.jpg&imgrefurl=https%3A%2F%2Flovepik.com%2Fimages%2Finformation-technology.html&tbnid=FuIuNu01zNIYMM&vet=12ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg..i&docid=X1k5SvcmWqnKnM&w=391&h=300&q=it%20image&ved=2ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg\",\r\n    \"active_from\" : \"2023-02-08T10:22:30.884Z\",\r\n    \"active_to\" : \"2023-02-19T10:22:30.884Z\",\r\n    \"frequency\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/add_promotion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"add_promotion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "promotion info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e37dcaf10eab5384c3126c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/get_promotion_info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"get_promotion_info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "promotion update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e37dcaf10eab5384c3126c\",\r\n    \"img\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.lovepik.com%2Fphoto%2F40009%2F8263.jpg_wh300.jpg&imgrefurl=https%3A%2F%2Flovepik.com%2Fimages%2Finformation-technology.html&tbnid=FuIuNu01zNIYMM&vet=12ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg..i&docid=X1k5SvcmWqnKnM&w=391&h=300&q=it%20image&ved=2ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg\",\r\n    \"active_from\" : \"2023-02-09T10:22:30.884Z\",\r\n    \"active_to\" : \"2023-02-19T10:22:30.884Z\",\r\n    \"frequency\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/update_promotion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"update_promotion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete promotion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e37dcaf10eab5384c3126c\",\r\n    \"img\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.lovepik.com%2Fphoto%2F40009%2F8263.jpg_wh300.jpg&imgrefurl=https%3A%2F%2Flovepik.com%2Fimages%2Finformation-technology.html&tbnid=FuIuNu01zNIYMM&vet=12ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg..i&docid=X1k5SvcmWqnKnM&w=391&h=300&q=it%20image&ved=2ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg\",\r\n    \"active_from\" : \"2023-02-09T10:22:30.884Z\",\r\n    \"active_to\" : \"2023-02-19T10:22:30.884Z\",\r\n    \"frequency\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/delete_promotion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"delete_promotion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "promotion status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\" : \"63e37dcaf10eab5384c3126c\",\r\n    \"img\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.lovepik.com%2Fphoto%2F40009%2F8263.jpg_wh300.jpg&imgrefurl=https%3A%2F%2Flovepik.com%2Fimages%2Finformation-technology.html&tbnid=FuIuNu01zNIYMM&vet=12ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg..i&docid=X1k5SvcmWqnKnM&w=391&h=300&q=it%20image&ved=2ahUKEwielOLn34X9AhVWj9gFHVk1DmYQMygUegUIARCAAg\",\r\n    \"active_from\" : \"2023-02-09T10:22:30.884Z\",\r\n    \"active_to\" : \"2023-02-19T10:22:30.884Z\",\r\n    \"frequency\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/promotion/update_promotion",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"promotion",
+										"update_promotion"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{adminToken}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-auth-token",
+						"type": "string"
+					},
+					{
+						"key": "in",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "INRD Mobile Api",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "send otp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country_code\" : \"91\",\r\n    \"mobile_no\" : \"9999999999\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/login/send_otp",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"login",
+										"send_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify otp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country_code\" : \"91\",\r\n    \"mobile_no\" : \"9999999999\",\r\n    \"otp\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/login/verify_otp",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"login",
+										"verify_otp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "add bank",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_ownership\": 1,\r\n    \"currency_code\": \"USD\",\r\n    \"bank_name\":\"HDFC\",\r\n    \"account_no\": \"1234567890\",\r\n    \"account_name\": \"savings\",\r\n    \"routing_no\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/add_bank",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"add_bank"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check pin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pin\" : \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/check_pin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"check_pin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update pin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"old_pin\": \"1234\",\r\n    \"new_pin\" : \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_pin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_pin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add interac id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"CAD\",\r\n    \"interac_id\" : \"INTERAC004\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/add_interac_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"add_interac_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add pay id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"AUD\",\r\n    \"pay_id\" : \"PAY006\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/add_pay_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"add_pay_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add upi id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"INR\",\r\n    \"upi_id\" : \"UPI001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/add_upi_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"add_upi_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get bank list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"CAD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_bank_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_bank_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get interac id list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"CAD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_interac_id_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_interac_id_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pay id list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"AUD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_pay_id_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_pay_id_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get upi id list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\": \"INR\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_upi_id_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_upi_id_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit bank",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"63e0f499aca789de05ce2d0b\",\r\n    \"account_ownership\": 1,\r\n    \"currency_code\": \"USD\",\r\n    \"bank_name\":\"HDFC\",\r\n    \"account_no\": \"1234567890\",\r\n    \"account_name\": \"savings\",\r\n    \"routing_no\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_bank",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_bank"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit interac id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"63e0e13ab9b26cb41cdad3df\",\r\n    \"currency_code\": \"CAD\",\r\n    \"interac_id\" : \"INTERAC002\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_interac_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_interac_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit pay id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"63e0e235920ec59c29e9e6fd\",\r\n    \"currency_code\": \"AUD\",\r\n    \"pay_id\" : \"PAY002\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_pay_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_pay_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit upi id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"63e0e2f28178ad405fb7d035\",\r\n    \"currency_code\": \"INR\",\r\n    \"upi_id\" : \"UPI002\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_upi_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_upi_id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country\" : \"63e1cfb2c93d917fbdeeee6f\",\r\n    \"fullname\" : \"Nensi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/update_profile",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"update_profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get country list",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_country_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_country_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/get_profile",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"get_profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload proof",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/DREAMWORLD/Downloads/person.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/upload_proof",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"upload_proof"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove proof",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"filename\" : \"https://storage.googleapis.com/inrd-f3749.appspot.com/bank/1675762696099.jpg?GoogleAccessId=firebase-adminsdk-dsb20%40inrd-f3749.iam.gserviceaccount.com&Expires=32503660200&Signature=TLNP0B7PxloaoP5tpVrpf019Ar7MYHyZ9VEdsNR5qeb%2BiTFXE%2F4Y9%2BE5Nzy5NwC6mz42z8N1IZqZ1SL5GYU%2FEEvfmhizBzDAUeNl7qye1hDjjXgWLZaL2PFKVGfRvb7dzzwVg6qMZaL5fi%2BlxIPRpTEetF9tnE5Z%2BIWousF1f%2FhkzS%2FSGy0isJ2CknLn1ZsBbn%2BWay3H%2FBiDSxFf3IrsbhiiZgPW6xWNrGd3F41pPNq%2FE82TK4QE38FN6QLd%2F1t%2BWZLdxqlzNVtOwZH4pHA9E09FEzEnNW5JKEvuVSSOV%2Fc2yJ66zX7dNSWWOtfH77qTK3Z%2B%2BnAtdOEXMqU8PPzfUw%3D%3D\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/settings/remove_proof",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"settings",
+										"remove_proof"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "withdraw",
+					"item": [
+						{
+							"name": "get currency list",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/withdraw/get_currency_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"withdraw",
+										"get_currency_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get withdraw request list",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth-token",
+										"value": "{{mobileToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\" : \"CAD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/withdraw/get_withdraw_request_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"withdraw",
+										"get_withdraw_request_list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add withdraw request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currency_code\" : \"CAD\",\r\n    \"amount\" : \"1000\",\r\n    \"transaction_type\" :1,\r\n    \"bank\" : \"63e0f499aca789de05ce2d0b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/withdraw/add_withdraw_request",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"withdraw",
+										"add_withdraw_request"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "get unread count list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"notification_last_open_date_time\" : \"2023-02-07T12:37:31.106+00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/notification/get_unread_count",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"notification",
+										"get_unread_count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get announcement list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"app_install_date_time\" : \"2023-02-06T12:37:31.106+00:00\",\r\n    \"page_no\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/notification/get_announcement_list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"notification",
+										"get_announcement_list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "device token",
+					"item": [
+						{
+							"name": "fcm token add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fcm_token\" : \"abc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/mobile/device_token/add_fcm_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"mobile",
+										"device_token",
+										"add_fcm_token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{mobileToken}}",
+						"type": "string"
+					},
+					{
+						"key": "in",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-auth-token",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

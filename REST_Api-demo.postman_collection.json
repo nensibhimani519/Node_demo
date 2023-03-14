@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "51ad34b2-093d-41fd-af66-c56c8374cc16",
+		"name": "REST_Api-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25191076"
+	},
+	"item": [
+		{
+			"name": "Feed",
+			"item": [
+				{
+					"name": "feed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/feed/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"feed",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lbnNpQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYzYjUxZmU5MzBjYWNiZjNiNjA5ZmNkOCIsImlhdCI6MTY3MjgxNDU3MiwiZXhwIjoxNjcyODE4MTcyfQ.sc7cbbu1AhWUtRp7_FcKB3YmRqrJKVtriVh-WcQZNXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lbnNpQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYzYjUwN2IwZDc5MWVkYTc2NzI2MGRhOCIsImlhdCI6MTY3MjgxMTcyOCwiZXhwIjoxNjcyODE1MzI4fQ.wpqKlETD_oIAiHVbjqEGtFTds3RDCtwSQUC68SXZUj0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " { \r\n     \"title\": \"Reading!!\",\r\n     \"imageUrl\": \"images/book1.jpg\",\r\n     \"content\": \"Reading Book !!\"\r\n          \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/feed/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"feed",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-feed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-feed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " { \r\n   \"title\": \"xyz123\",\r\n        \"imageUrl\": \"images/book.jpg\",\r\n        \"content\": \"This is the my first post !!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/feed/post/63b41e9c7d4d5f6e4f5e19e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"feed",
+								"post",
+								"63b41e9c7d4d5f6e4f5e19e1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup-user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Nensi\",\r\n    \"email\" : \"fsi.nensi@gmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"nensi@gmail.com\",\r\n    \"password\" :\"123456\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
